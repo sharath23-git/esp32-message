@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>ESP32 Message</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    input {
+        width: 300px;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    #status {
+        margin-top: 20px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>Send Message</h1>
+
+<input
+    type="text"
+    id="message"
+    placeholder="Type your message"
+    maxlength="32"
+>
+
+<br>
+
+<button onclick="sendMessage()">
+    SEND
+</button>
+
+<p id="status"></p>
+
+
+<script>
+
+    function sendMessage()
+    {
+        let message =
+            document.getElementById("message").value;
+
+        if (message.trim() === "")
+        {
+            document.getElementById("status").innerText =
+                "Please enter a message.";
+
+            return;
+        }
+
+        document.getElementById("status").innerText =
+            "Message: " + message;
+    }
+
+</script>
+```
+
+</body>
+</html>
